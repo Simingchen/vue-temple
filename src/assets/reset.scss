@@ -1,0 +1,161 @@
+* {
+    -webkit-box-sizing:border-box;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+}
+body,button,input,textarea,select{
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: #3d4145;
+}
+html,ul,ol,dl,dd,h1,h2,h3,h4,h5,h6,p,form,input,button,select{
+    margin:0;padding:0;
+}
+h1,h2,h3,h4,h5,h6 { 
+    font-weight: normal;
+    font-size: 0.8rem;
+}
+
+body{
+    max-width: 640px;
+    height: 100%;
+    margin:0 auto;
+    background-color:#f5f5f5;
+}
+
+a,button,textarea,input,label{
+    outline:0 none;
+    -webkit-tap-highlight-color:transparent;
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+select {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    background: none;
+}
+input[type=search] &::-webkit-search-cancel-button {
+    display: none
+}
+button,input{
+    border:0;
+}
+a:focus,button:focus,input:focus,select:focus,textarea:focus{outline: 0}
+li{list-style:none;}
+img{max-width: 100%;vertical-align: top;border:0;}
+i{font-style:normal;}
+video{
+    width:100%;
+}
+.rel{position:relative;}
+.abs{position:absolute;}
+.tac{text-align:center;}
+.tar{text-align:right;}
+.tal{text-align:left;}
+/* float */
+.fl{float:left;}
+.fr{float:right;}
+.dpn{display:none;}
+.dpb{display:block}
+.ofh{overflow:hidden}
+.clearfix:after{content: ".";display: block;height: 0; clear: both;visibility: hidden;}
+
+.fs12{font-size: 0.6rem;}
+.fw6{font-weight:600;}
+
+.w4{display:block;width:4rem}
+.p10{padding:0.5rem;}
+.pt10{padding-top:0.5rem;}
+.pr10{padding-right:0.5rem;}
+.pb10{padding-bottom:0.5rem;}
+.pl10{padding-left:0.5rem;}
+
+.m10{margin:0.5rem;}
+.mn10{margin-top:-0.5rem;}
+.mt10{margin-top:0.5rem;}
+.mr10{margin-right:0.5rem}
+.mb10{margin-bottom:0.5rem;}
+.ml10{margin-left:0.5rem;}
+
+.bgf{background-color:#fff;}
+
+.c58{color:#ec584e;}
+.c6{color:#666;}
+.c9{color:#999;}
+.cblue{color:#2277da}
+.wp100{width:100%;}
+.hp100{height:100%;}
+
+.lh30{line-height:1.5rem;}
+.border0{border:0}
+
+
+// iphone6 下三个像素点让边框适应大屏幕下像素要求
+@media only screen and (-webkit-min-device-pixel-ratio:3) {
+    .bor-bottom:before{
+        -webkit-transform: scaleY(.33);
+        transform: scaleY(.33)
+    }
+}
+// 下边框
+.bor-bottom:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #e7e7e7;
+    z-index: 1;
+    -webkit-transform-origin: 50% 100%;
+    transform-origin: 50% 100%;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+}
+
+// 点击触发样式效果
+.toActive:active{
+    -webkit-transition: 0ms;
+    transition: 0ms;
+    background-color: #d9d9d9;
+}
+//flex
+.flex-box{
+    display: -webkit-flex;
+    display: flex;
+    // flex盒下左右排列
+    &.between{
+        -webkit-justify-content: space-between;
+        -moz-justify-content: space-between;
+        justify-content: space-between;
+    }
+    .flex-item{
+        -webkit-flex: 1;
+        flex: 1;
+    }
+}
+// 单双行换行
+.ellipsis{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.ellipsis2{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+// fix fastclick bug: https://github.com/ftlabs/fastclick/issues/60
+label > * {
+    pointer-events: none;
+}

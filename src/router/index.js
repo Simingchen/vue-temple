@@ -1,6 +1,6 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-Vue.use(VueRouter)
+/* eslint-disable */
+// import VueRouter from 'vue-router'
+// Vue.use(VueRouter)
 
 export const constantRouterMap = [
   { path: '/login', component: () => import('@/views/center/login.vue'), hidden: true }, // 登录
@@ -14,7 +14,7 @@ export const stateRouterMap = [
   { path: '*', redirect: '/404', hidden: true }
 ]
 
-/* eslint-disable */
+
 export default new VueRouter({
   routes: constantRouterMap
 })

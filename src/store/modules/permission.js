@@ -17,12 +17,6 @@ const permission = {
     GenerateRoutes ({ commit }, data) {
       return new Promise(resolve => {
         const qq = filterAsyncRouter(data)
-        const sedw = {
-          path: '*',
-          redirect: '/',
-          hidden: true
-        }
-        qq.push(sedw)
         commit('SET_ROUTERS', qq)
         resolve()
       })

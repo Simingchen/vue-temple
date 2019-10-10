@@ -11,5 +11,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import './assets/reset.scss';
+@import './assets/css/reset.scss';
+</style>
+<style src="@nutui/nutui/dist/nutui.css">
+
 </style>

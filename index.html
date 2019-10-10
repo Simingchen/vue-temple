@@ -11,15 +11,28 @@
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="Cache" content="no-cache">
     <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
-    <!-- 引入样式 -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.5/dist/nutui.min.css">
-	<!-- 引入Vue -->
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-	<!-- 引入组件库 -->
-	<script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.5/dist/nutui.min.js"></script>
+	  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.5/dist/nutui.min.css">
   </head>
   <body>
     <div id="app"></div>
+    <script>
+        // 控制字根大小rem
+        ;(function(win, doc) {
+            function change() {
+                var W = win.innerWidth;
+                var oStyle = doc.getElementsByTagName("html")[0].style;
+                oStyle.fontSize = W > 640 ? "34px" : (W/18.75 + "px");
+                oStyle.backgroundColor = W > 640 ? "#eae9ee" : "";
+            }
+            change();
+            win.addEventListener('resize', change, false);
+        })(window, document);
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@nutui/nutui@2.1.5/dist/nutui.min.js"></script>
+    <script src="//cdn.staticfile.org/axios/0.18.0/axios.min.js"></script>
+    <!-- <script src="//cdn.staticfile.org/vue-router/3.0.1/vue-router.min.js"></script> -->
+    <script src="//cdn.staticfile.org/vuex/3.0.1/vuex.min.js"></script>
     <!-- built files will be auto injected -->
   </body>
 </html>

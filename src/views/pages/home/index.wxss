@@ -1,0 +1,8 @@
+.ban image, .ban {
+    width: 750rpx;
+    height: 360rpx;
+    overflow: hidden;
+}
+.top-swiper{
+    height:360rpx;
+}

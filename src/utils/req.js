@@ -29,8 +29,8 @@ const getRequestIdentify = (config, isReuest = false) => {
 const service = axios.create({
   baseURL: process.env.BASE_API,
   timeout: 60000,
-
 })
+
 // request拦截器
 service.interceptors.request.use(
   config => {
@@ -38,18 +38,6 @@ service.interceptors.request.use(
     config.headers['Pragma'] = 'no-cache'
     let requestData = getRequestIdentify(config, true)
     removePending(requestData, true)
-
-    config.cancelToken = new CancelToken((c) => {
-      pending[requestData] = c
-    })
-
-    if (config.isLoading !== false) { // 如果配置了isLoading: false，则不显示loading
-      showFullLoading()
-    }
-    if (store.getters.token) {
-      config.headers['token'] = getToken() // 让每个请求携带自定义token
-    }
-    // console.log(config)
     return config
   },
   error => {

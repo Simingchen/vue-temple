@@ -1,4 +1,5 @@
-const _import = require('../router/router_test.js')
+import Layout from '../views/layout.vue'
+const importPage = require('../router/_import_' + process.env.NODE_ENV)
 
 // 金额格式化
 export function formatMoney (s1, n) {
@@ -53,19 +54,16 @@ export function dateFom () {
 
 // 遍历后台传来的路由字符串，转换为组件对象
 export function filterAsyncRouter (asyncRouterMap) {
-  asyncRouterMap.forEach(ele => {
-    // if (ele.name === 'Dashboard') {
-    //   const com = ele.children[0].component
-    //   ele.meta = []
-    //   ele.children[0].component = _import(com)
-    // }
-    if (ele.component === 'Layout') {
-      // ele.component = Layout
+  asyncRouterMap.forEach(item => {
+    if (item.component === 'layout') {
+      item.component = Layout
+    } else {
+      item.component = importPage(item.component)
     }
-    if (ele.children && ele.children.length > 0) {
-      const d2 = ele.children
-      d2.forEach(element => {
-        element.component = _import(element.component)
+
+    if (item.children && item.children.length > 0) {
+      item.children.forEach(element => {
+        element.component = importPage(element.component)
       })
     }
   })

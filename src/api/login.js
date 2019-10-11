@@ -1,14 +1,10 @@
 import req from '@/utils/req'
 
-// 栗子可删
-export function login (username, password) {
+export function apiLogin (par) {
   return req({
-    url: '/user/login',
-    method: 'post',
-    data: {
-      username,
-      password
-    }
+    url: 'sso/authentication/genUUID.do',
+    method: 'get',
+    data: par
   })
 }
 

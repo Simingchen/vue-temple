@@ -22,10 +22,11 @@ router.beforeEach((to, from, next) => {
       next({ path: '/' })
       NProgress.done()
     } else {
-      if (store.getters.roles.length === 0) {
-        store.dispatch('GetInfo').then(res => { // 拉取用户信息
+      if (store.getters.roles.length === 0) {  // 如果没有用户信息
+        store.dispatch('GetInfo').then(res => {
           // const rolData = JSON.parse(window.sessionStorage.odata)
           const rolData = routerTest
+          console.log(routerTest)
           store.dispatch('GenerateRoutes', rolData).then(() => { // 根据roles权限生成可访问的路由表
             router.addRoutes(store.getters.addRouters) // 动态添加可访问路由表
             next({ ...to, replace: true }) // hack方法 确保addRoutes已完成  replace: true清除导航记录

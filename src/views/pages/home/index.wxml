@@ -1,0 +1,12 @@
+<!--轮播图  -->
+<view class='ban'>
+    <swiper class="top-swiper" indicator-dots="{{topBanner.indicatorDots}}" circular="{{topBanner.circular}}" autoplay="{{topBanner.autoplay}}" interval="{{topBanner.interval}}" duration="{{topBanner.duration}}" indicator-active-color="{{topBanner.activeColor}}" indicator-color="{{topBanner.color}}">
+        <block wx:for="{{topBanner.list}}" wx:key="{{index}}">
+            <swiper-item>
+                <navigator url="{{item.ID}}">
+                    <image src="{{item.File}}" class="slide-image" />
+                </navigator>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>

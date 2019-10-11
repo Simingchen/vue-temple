@@ -2,6 +2,7 @@
 // import Vue from 'vue'
 import App from './App'
 import router from './router'
+import store from './store'
 import dayjs from 'dayjs'
 import debounce from 'lodash.debounce'
 import VueLazyLoad from 'vue-lazyload' // 图片懒加载
@@ -19,6 +20,7 @@ Vue.use(router)
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })

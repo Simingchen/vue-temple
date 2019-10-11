@@ -9,15 +9,15 @@ const permission = {
   mutations: {
     SET_ROUTERS: (state, routers) => {
       state.addRouters = routers
-      const w = routers.concat(stateRouterMap)
-      state.routers = constantRouterMap.concat(w)
+      const tempData = routers.concat(stateRouterMap)
+      state.routers = constantRouterMap.concat(tempData)
     }
   },
   actions: {
     GenerateRoutes ({ commit }, data) {
       return new Promise(resolve => {
-        const qq = filterAsyncRouter(data)
-        commit('SET_ROUTERS', qq)
+        const tempData = filterAsyncRouter(data)
+        commit('SET_ROUTERS', tempData)
         resolve()
       })
     }

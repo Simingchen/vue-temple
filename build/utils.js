@@ -33,7 +33,7 @@ exports.cssLoaders = function (options) {
   const px2remLoader = {
     loader: 'px2rem-loader',
     options: {
-      remUnit: 37.5, //根据视觉稿，rem为px的十分之一，720宽度px 72rem
+      remUnit: 75, //根据视觉稿，rem为px的十分之一，720宽度px 72rem
       remPrecision: 2
     }
   }

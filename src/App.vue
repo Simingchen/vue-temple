@@ -15,7 +15,5 @@ export default {
 
 <style lang="scss">
 @import './assets/css/reset.scss';
-</style>
-<style src="@nutui/nutui/dist/nutui.css">
-
+@import './assets/css/nprogress.scss';
 </style>

@@ -1,10 +1,8 @@
 <template>
   <div>
-    <nut-swiper :pagination-visible="true" :loop="true" direction="horizontal">
-      <div v-for="(item,index) in dataItem" :key="index" class="nut-swiper-slide">
-        <span>page{{ item.name }}</span>
-      </div>
-    </nut-swiper>
+    <van-swipe :autoplay="3000" class="swiper" indicator-color="white">
+      <van-swipe-item v-for="(item,index) in dataItem" :key="index">{{ item.name }}</van-swipe-item>
+    </van-swipe>
   </div>
 </template>
 
@@ -15,7 +13,7 @@ export default {
     return {
       dataItem: [
         { name: 1 },
-        { name: 1 },
+        { name: 2 },
         { name: 1 },
         { name: 1 }
       ]
@@ -23,4 +21,9 @@ export default {
   }
 }
 </script>
+<style lang="scss" scoped>
+  .swiper{
+    height:400px;
+  }
+</style>
 

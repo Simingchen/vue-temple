@@ -12,7 +12,7 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       '/api': {
-        target: 'https://www.w3school.com.cn/',
+        target: 'https://www.easy-mock.com/mock/5ba39ce800424530fc9db8fe/api/',
         changeOrigin: true, // 改变源 开启代理
         pathRewrite: { '^/api': '/' }
       }
